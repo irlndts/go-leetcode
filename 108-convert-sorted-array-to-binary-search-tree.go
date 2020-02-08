@@ -15,20 +15,11 @@ func sortedArrayToBST(nums []int) *TreeNode {
 		return nil
 	}
 
-	if len(nums) == 1 {
-		return &TreeNode{
-			Val: nums[0],
-		}
-	}
-
 	median := len(nums) / 2
-
 	node := &TreeNode{
-		Val:  nums[median],
-		Left: sortedArrayToBST(nums[:median]),
-	}
-	if len(nums)-1 != median {
-		node.Right = sortedArrayToBST(nums[median+1:])
+		Val:   nums[median],
+		Left:  sortedArrayToBST(nums[:median]),
+		Right: sortedArrayToBST(nums[median+1:]),
 	}
 
 	return node
