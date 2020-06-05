@@ -8,6 +8,18 @@ import (
 // https://leetcode.com/problems/hamming-distance/
 
 func hammingDistance(x int, y int) int {
+	diff := x ^ y
+	bits := 0
+	for diff > 0 {
+		if diff&1 != 0 {
+			bits++
+		}
+		diff = diff >> 1
+	}
+	return bits
+}
+
+func hammingDistance1(x int, y int) int {
 	a := fmt.Sprintf("%b", x)
 	b := fmt.Sprintf("%b", y)
 
