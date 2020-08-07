@@ -1,7 +1,5 @@
 package leetcode
 
-// https://leetcode.com/problems/combination-sum/
-
 import "sort"
 
 func combinationSum(candidates []int, target int) [][]int {

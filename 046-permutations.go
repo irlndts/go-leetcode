@@ -1,8 +1,6 @@
 package leetcode
 
-// https://leetcode.com/problems/permutations/
-
-// var result [][]int
+var result [][]int
 
 func permute(nums []int) [][]int {
 	if len(nums) == 0 {

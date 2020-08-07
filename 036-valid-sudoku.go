@@ -1,7 +1,5 @@
 package leetcode
 
-// https://leetcode.com/problems/valid-sudoku/
-
 func isValidSudoku(board [][]byte) bool {
 	// rows
 	for _, b := range board {

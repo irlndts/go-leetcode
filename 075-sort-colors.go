@@ -1,7 +1,5 @@
 package leetcode
 
-// https://leetcode.com/problems/sort-colors/
-
 func sortColors(nums []int) {
 	m := map[int]int{
 		0: 0,

@@ -5,8 +5,6 @@ import (
 	"strings"
 )
 
-// https://leetcode.com/problems/group-anagrams/
-
 func groupAnagrams(strs []string) [][]string {
 	if len(strs) == 0 {
 		return nil
