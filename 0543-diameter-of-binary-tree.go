@@ -13,17 +13,21 @@ func diameterOfBinaryTree(root *TreeNode) int {
 		return 0
 	}
 
+	memo = map[*TreeNode]int{}
+
 	result = 0
 	path(root)
 	return result
 }
+
+var memo map[*TreeNode]int
 
 func path(root *TreeNode) {
 	if root == nil {
 		return
 	}
 
-	cur := distance(root.Left, 0) + distance(root.Right, 0)
+	cur := distance(root.Left) + distance(root.Right)
 	result = max(result, cur)
 
 	path(root.Left)
@@ -31,12 +35,17 @@ func path(root *TreeNode) {
 
 }
 
-func distance(root *TreeNode, current int) int {
+func distance(root *TreeNode) int {
 	if root == nil {
-		return current
+		return 0
 	}
-	current++
-	return max(distance(root.Left, current), distance(root.Right, current))
+
+	if v, ok := memo[root]; ok {
+		return v
+	}
+
+	memo[root] = 1 + max(distance(root.Left), distance(root.Right))
+	return memo[root]
 }
 
 func max(a, b int) int {
