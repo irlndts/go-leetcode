@@ -1,14 +1,6 @@
-package main
+package leetcode
 
-import "fmt"
-
-func main() {
-	for i := 0; i <=27 ; i++ {
-		if isPowerOfThree(i){
-			fmt.Println(i)
-		}
-	}
-}
+// https://leetcode.com/problems/power-of-three/
 
 func isPowerOfThree(n int) bool {
 	if n == 0 {
@@ -20,5 +12,5 @@ func isPowerOfThree(n int) bool {
 	if n % 3 == 0 {
 		return isPowerOfThree(n/3)
 	}
-	return false
+	return n==1
 }
